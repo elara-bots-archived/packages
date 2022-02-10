@@ -1,0 +1,12 @@
+# v3.0.0
+
+__Breaking Changes__
+Removed `UserFlags`, `Permissions` and `BitField`
+
+
+__Added__
+`Interactions`
+-> button
+-> select
+-> modal
+And the typings.
