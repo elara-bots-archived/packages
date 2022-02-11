@@ -37,7 +37,7 @@ declare module "@elara-services/packages" {
         public static button(options: ButtonOptions): Button;
         public static select(options: SelectOptions): Select;
         public static modal(options: ModalOptions): Modal;
-    };
+    }
 
     export type ChannelTypes = 'GUILD_TEXT' | 'DM' | 'GUILD_VOICE' | 'GROUP_DM' | 'GUILD_CATEGORY' | 'GUILD_NEWS' | 'GUILD_STORE' | 'GUILD_NEWS_THREAD' | 'GUILD_PUBLIC_THREAD' | 'GUILD_PRIVATE_THREAD' | 'GUILD_STAGE_VOICE';
 
@@ -106,6 +106,8 @@ declare module "@elara-services/packages" {
         url?: Button['url']
     }
 
+    export type ButtonStyles = 'PRIMARY' | 'BLURPLE' | 'SECONDARY' | 'GREY' | 'SUCCESS' | 'GREEN' | 'DANGER' | 'RED' | 'LINK' | 'URL'
+
     export type Select = {
         custom_id: string;
         placeholder: string;
@@ -135,16 +137,19 @@ declare module "@elara-services/packages" {
         title: string;
         custom_id: string;
         components: {
-            type: number;
-            custom_id: string;
-            label: string;
-            style: 1 | 2 | number;
-            min_length?: number;
-            max_length?: number;
-            required?: boolean;
-            value?: string;
-            placeholder?: string;
-        }[]
+            type: number,
+            components: {
+                type: number;
+                custom_id: string;
+                label: string;
+                style: 1 | 2 | number;
+                min_length?: number;
+                max_length?: number;
+                required?: boolean;
+                value?: string;
+                placeholder?: string;
+            }[]
+        }
     }
 
     export type ModalOptions = {
