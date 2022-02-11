@@ -149,7 +149,7 @@ declare module "@elara-services/packages" {
                 value?: string;
                 placeholder?: string;
             }[]
-        }
+        }[]
     }
 
     export type ModalOptions = {
