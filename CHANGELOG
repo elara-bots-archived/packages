@@ -1,3 +1,7 @@
+# v3.0.3
+Added 'types.context.user', 'types.context.message' and the typings for SlashBuilder
+
+
 # v3.0.1, v3.0.2
 
 Fixed the typings for modal and added the typings for "ButtonStyle" 

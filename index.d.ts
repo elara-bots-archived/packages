@@ -73,7 +73,11 @@ declare module "@elara-services/packages" {
             channel: number,
             role: number,
             mentionable: number,
-            number: number
+            number: number,
+            context: {
+                user: number;
+                message: number;
+            }
         };
 
         public context: {

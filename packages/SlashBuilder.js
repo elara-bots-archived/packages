@@ -15,6 +15,10 @@ module.exports = class SlashBuilder {
             role: 8,
             mentionable: 9,
             number: 10,
+            context: {
+                user: 2,
+                message: 3
+            }
         };
     }
 
