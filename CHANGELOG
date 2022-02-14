@@ -1,3 +1,9 @@
+# v4.0.0
+__Breaking Change__
+The following functions & methods for `SlashBuilder` was moved to `static`
+> So you no longer need to do `new (require("@elara-services/packages").SlashBuilder)()`
+
+
 # v3.0.3
 Added 'types.context.user', 'types.context.message' and the typings for SlashBuilder
 

@@ -1,9 +1,9 @@
-module.exports = class SlashBuilder {
-    constructor() {
-        this.TEXT_BASED_CHANNELS = [ 0, 5, 11, 12 ];
-    };
+module.exports = class SlashBuilder extends null {
+    static get TEXT_BASED_CHANNELS() {
+        return [ 0, 5, 11, 12 ]
+    }
 
-    get types() {
+    static get types() {
         return {
             sub_command: 1,
             sub_group: 2,
@@ -22,22 +22,22 @@ module.exports = class SlashBuilder {
         };
     }
 
-    get context() {
+    static get context() {
         return {
             user: (name) => this.create(name, "", { type: 2 }),
             message: (name) => this.create(name, "", { type: 3 })
         }
     };
     
-    choice(name, value) {
+    static choice(name, value) {
         return { name, value };
     };
 
-    option(data) {
+    static option(data) {
         return data;
     };
 
-    create(name, description, options = { }) {
+    static create(name, description, options = { }) {
         let obj = { name, description };
         if (options?.options?.length) obj.options = options.options;
         if (options.type) obj.type = options.type;

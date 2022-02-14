@@ -62,8 +62,10 @@ declare module "@elara-services/packages" {
     }
 
     export class SlashBuilder {
-        public constructor();
-        public types: {
+
+        public static TEXT_BASED_CHANNELS: number[];
+
+        public static types: {
             sub_command: number,
             sub_group: number,
             string: number,
@@ -80,14 +82,14 @@ declare module "@elara-services/packages" {
             }
         };
 
-        public context: {
+        public static context: {
             user(name: string): Slash;
             message(name: string): Slash;
         };
 
-        public choice(name: string, value: string|number): { name: string, value: string|number };
-        public option(data: SlashOptions): Slash;
-        public create(name: string, description: string, options: Slash): Slash;
+        public static choice(name: string, value: string|number): { name: string, value: string|number };
+        public static option(data: SlashOptions): Slash;
+        public static create(name: string, description: string, options: Slash): Slash;
     }
 
     export type Button = {
