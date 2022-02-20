@@ -1,3 +1,8 @@
+# v4.0.1
+Added 
+- Languages.find
+- Languages.langs 
+
 # v4.0.0
 __Breaking Change__
 The following functions & methods for `SlashBuilder` was moved to `static`

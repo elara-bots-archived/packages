@@ -1,4 +1,4 @@
-module.exports = {
+const langs = {
     'en': 'English',
     'fr': 'French',
     'es': 'Spanish',
@@ -106,3 +106,14 @@ module.exports = {
     'yo': 'Yoruba',
     'zu': 'Zulu'
 };
+/** @deprecated */
+module.exports = langs;
+module.exports.langs = langs;
+
+module.exports.find = (name) => {
+    for (const key of Object.keys(langs)) {
+        if (key === name) return key;
+        if (langs[key] === name) return key;
+    }
+    return null;
+}

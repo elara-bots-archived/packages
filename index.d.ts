@@ -9,7 +9,11 @@ declare module "@elara-services/packages" {
         public decrypt(encrypted: string): string;
     }
 
-    export const Languages: object;
+    export const Languages: {
+        find(name: string): string | null;
+        langs: object
+    }
+
     export class Minesweeper {
         public constructor(options?: {
             rows?: number;
