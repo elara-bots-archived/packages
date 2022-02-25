@@ -6,7 +6,7 @@ try {
 
 }
 
-module.exports = (url, key = "", body = undefined, postRequest = false, returnRaw = false) => {
+module.exports = async (url, key = "", body = undefined, postRequest = false, returnRaw = false) => {
     if (!fetch) throw new Error(`Unable to find @elara-services/fetch package`);
     try {
         let headers = { 
