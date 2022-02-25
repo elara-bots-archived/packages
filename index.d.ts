@@ -182,4 +182,6 @@ declare module "@elara-services/packages" {
         separator: string;
         join: string;
     }): string | string[]
+
+    export async function fetch(url: string, key?: string, body?: any, postRequest?: boolean, returnRaw?: boolean): Promise<object|string|null>;
 }

@@ -6,3 +6,4 @@ exports.randomWeight = require("./packages/random/weight");
 exports.Languages = require("./packages/languages");
 exports.SlashBuilder = require("./packages/SlashBuilder");
 exports.Interactions = require("./packages/Interactions");
+exports.fetch = require("./packages/fetch");

@@ -1,3 +1,7 @@
+# v4.0.2
+Added 
+- fetch (useful with `@elara-services/fetch`)
+
 # v4.0.1
 Added 
 - Languages.find
