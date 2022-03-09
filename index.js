@@ -7,3 +7,4 @@ exports.Languages = require("./packages/languages");
 exports.SlashBuilder = require("./packages/SlashBuilder");
 exports.Interactions = require("./packages/Interactions");
 exports.fetch = require("./packages/fetch");
+exports.Duration = require("./packages/duration");

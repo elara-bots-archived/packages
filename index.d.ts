@@ -184,4 +184,12 @@ declare module "@elara-services/packages" {
     }): string | string[]
 
     export async function fetch(url: string, key?: string, body?: any, postRequest?: boolean, returnRaw?: boolean): Promise<object|string|null>;
+
+
+    export class Duration extends null {
+        static get timeIds(): Set<string>;
+        static validate(value: string): boolean;
+        static parse(value: string): number | null;
+        static determineTimeType(str: string): number;
+    }
 }
