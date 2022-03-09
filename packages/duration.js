@@ -9,7 +9,7 @@ module.exports = class Duration extends null {
                     dur.match(/[A-Za-z]+/g)[0]
                 ];
                 if (isNaN(num)) totalTime = 0;
-                else totalTime += num * this.determineTimeType(str);
+                else totalTime += num * module.exports.determineTimeType(str);
             }
             if (totalTime) return totalTime;
         }
@@ -50,7 +50,7 @@ module.exports = class Duration extends null {
                 if (!num || (num.length !== 1)) return false;
                 if (!str || (str.length !== 1)) return false;
                 if (!Number.isInteger(parseInt(num[0]))) return false;
-                if (!this.timeIds.has(str[0])) return false;
+                if (!module.exports.timeIds.has(str[0])) return false;
             }
     
             return true;
