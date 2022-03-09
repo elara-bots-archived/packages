@@ -191,5 +191,15 @@ declare module "@elara-services/packages" {
         static validate(value: string): boolean;
         static parse(value: string): number | null;
         static determineTimeType(str: string): number;
+    };
+
+    export class Tasks extends null {
+        static create(options: {
+            id: string;
+            time: string;
+            shouldCancel?: boolean
+        }, run: Function): void;
+        
+        static delete(id: string): void;
     }
 }
