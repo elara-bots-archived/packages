@@ -1,3 +1,7 @@
+# v4.7.0
+Added `locale` option for `<SlashBuilder>.create`, `<SlashBuilder>.option`, `<SlashBuilder.context.user/message>`
+
+
 # v4.0.3, v4.0.2
 Added 
 - fetch (useful with `@elara-services/fetch`)

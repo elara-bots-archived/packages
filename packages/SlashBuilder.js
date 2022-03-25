@@ -24,8 +24,8 @@ module.exports = class SlashBuilder extends null {
 
     static get context() {
         return {
-            user: (name) => this.create(name, "", { type: 2 }),
-            message: (name) => this.create(name, "", { type: 3 })
+            user: (name, locale) => this.create(name, "", { type: 2, locale }),
+            message: (name, locale) => this.create(name, "", { type: 3, locale })
         }
     };
     
@@ -34,11 +34,17 @@ module.exports = class SlashBuilder extends null {
     };
 
     static option(data) {
-        return data;
+        let _data = { ...data };
+        if (_data.locale?.names) _data.name_localizations = _data.locale.names;
+        if (_data.locale?.descriptions) _data.description_localizations = _data.locale.descriptions;
+        if ("locale" in _data) delete _data["locale"];
+        return _data;
     };
 
     static create(name, description, options = { }) {
         let obj = { name, description };
+        if (options.locale?.names) obj.name_localizations = options.locale.names;
+        if (options.locale?.descriptions) obj.description_localizations = options.locale.descriptions;
         if (options?.options?.length) obj.options = options.options;
         if (options.type) obj.type = options.type;
         if (typeof options.defaultPermission === "boolean") obj.default_permission = options.defaultPermission;

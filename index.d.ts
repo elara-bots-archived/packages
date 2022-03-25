@@ -56,6 +56,10 @@ declare module "@elara-services/packages" {
         max_value?: number;
         choices?: { name: string, value: string }[];
         options?: SlashOptions[];
+        locale?: {
+            names?: object;
+            descriptions?: object;
+        }
     }
 
     export type Slash = {
@@ -63,6 +67,10 @@ declare module "@elara-services/packages" {
         defaultPermission?: boolean;
         default_permission?: boolean;
         options?: SlashOptions[];
+        locale?: {
+            names?: object;
+            descriptions?: object;
+        }
     }
 
     export class SlashBuilder {
@@ -87,8 +95,8 @@ declare module "@elara-services/packages" {
         };
 
         public static context: {
-            user(name: string): Slash;
-            message(name: string): Slash;
+            user(name: string, locale?: { names?: object }): Slash;
+            message(name: string, locale?: { names?: object }): Slash;
         };
 
         public static choice(name: string, value: string|number): { name: string, value: string|number };
