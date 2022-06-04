@@ -52,8 +52,8 @@ module.exports = class SlashBuilder extends null {
         if ("defaultPermission" in options) obj.default_permission = options.defaultPermission;
         else if ("default_permission" in options) obj.default_permission = options.default_permission;
 
-        if ("dmPermission" in options) obj.dm_permission = obj.dmPermission;
-        else if ("dm_permission" in options) obj.dm_permission = obj.dm_permission;
+        if ("dmPermission" in options) obj.dm_permission = options.dmPermission;
+        else if ("dm_permission" in options) obj.dm_permission = options.dm_permission;
         
         if ("default_member_permissions" in options) obj.default_member_permissions = options.default_member_permissions;
         else if ("defaultMemberPermissions" in options) obj.default_member_permissions = options.defaultMemberPermissions;

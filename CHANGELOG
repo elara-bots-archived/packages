@@ -1,4 +1,4 @@
-# v4.8.0
+# v4.8.0/v4.8.1
 - Added: `dmPermission` (`dm_permission`) for SlashBuilder.create
 - Added: `defaultMemberPermissions` (`default_member_permissions`) for SlashBuilder.create
 - Deprecated `defaultPermission` (`default_permission`) for SlashBuilder.create
