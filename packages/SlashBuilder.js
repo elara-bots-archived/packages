@@ -24,8 +24,8 @@ module.exports = class SlashBuilder extends null {
 
     static get context() {
         return {
-            user: (name, locale) => this.create(name, "", { type: this.types.context.user, locale }),
-            message: (name, locale) => this.create(name, "", { type: this.types.context.message, locale })
+            user: (name, options) => this.create(name, "", { type: this.types.context.user, ...options }),
+            message: (name, options) => this.create(name, "", { type: this.types.context.message, ...options })
         }
     };
     
@@ -47,10 +47,6 @@ module.exports = class SlashBuilder extends null {
         if (options?.locale?.descriptions) obj.description_localizations = options.locale.descriptions;
         if (options?.options?.length) obj.options = options.options;
         if (options?.type) obj.type = options.type;
-
-        // TODO: Remove this, as it's deprecated.
-        if ("defaultPermission" in options) obj.default_permission = options.defaultPermission;
-        else if ("default_permission" in options) obj.default_permission = options.default_permission;
 
         if ("dmPermission" in options) obj.dm_permission = options.dmPermission;
         else if ("dm_permission" in options) obj.dm_permission = options.dm_permission;

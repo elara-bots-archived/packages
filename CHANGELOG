@@ -1,3 +1,8 @@
+# v5.0.0
+### BREAKING CHANGES
+- `locale` option for `SlashBuilder.context.user` and `SlashBuilder.context.message` was turned into `options` taking in more options (to support both permissions and locale)
+- `defaultPermission`/`default_permission` was removed, since it's deprecated. (if you want to use it then stay on v4.8.1)
+
 # v4.8.0/v4.8.1
 - Added: `dmPermission` (`dm_permission`) for SlashBuilder.create
 - Added: `defaultMemberPermissions` (`default_member_permissions`) for SlashBuilder.create

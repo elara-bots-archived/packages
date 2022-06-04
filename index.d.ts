@@ -76,10 +76,6 @@ declare module "@elara-services/packages" {
             names?: object;
             descriptions?: object;
         }
-        /** @deprecated - Use defaultMemberPermissions or dmPermission */
-        defaultPermission?: boolean;
-        /** @deprecated - Use defaultMemberPermissions or dmPermission */
-        default_permission?: boolean;
     }
 
     export class SlashBuilder {
@@ -104,8 +100,8 @@ declare module "@elara-services/packages" {
         };
 
         public static context: {
-            user(name: string, locale?: { names?: object }): Slash;
-            message(name: string, locale?: { names?: object }): Slash;
+            user(name: string, options?: Omit<Slash, "options"|"type">): Slash;
+            message(name: string, options?: Omit<Slash, "options"|"type">): Slash;
         };
 
         public static choice(name: string, value: string|number): { name: string, value: string|number };
