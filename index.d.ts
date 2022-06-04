@@ -64,13 +64,22 @@ declare module "@elara-services/packages" {
 
     export type Slash = {
         type?: number;
-        defaultPermission?: boolean;
-        default_permission?: boolean;
+
+        dmPermission?: boolean;
+        dm_permission?: boolean;
+
+        defaultMemberPermissions?: string;
+        default_member_permissions?: string;
+        
         options?: SlashOptions[];
         locale?: {
             names?: object;
             descriptions?: object;
         }
+        /** @deprecated - Use defaultMemberPermissions or dmPermission */
+        defaultPermission?: boolean;
+        /** @deprecated - Use defaultMemberPermissions or dmPermission */
+        default_permission?: boolean;
     }
 
     export class SlashBuilder {

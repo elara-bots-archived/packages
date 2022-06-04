@@ -24,8 +24,8 @@ module.exports = class SlashBuilder extends null {
 
     static get context() {
         return {
-            user: (name, locale) => this.create(name, "", { type: 2, locale }),
-            message: (name, locale) => this.create(name, "", { type: 3, locale })
+            user: (name, locale) => this.create(name, "", { type: this.types.context.user, locale }),
+            message: (name, locale) => this.create(name, "", { type: this.types.context.message, locale })
         }
     };
     
@@ -43,12 +43,20 @@ module.exports = class SlashBuilder extends null {
 
     static create(name, description, options = { }) {
         let obj = { name, description };
-        if (options.locale?.names) obj.name_localizations = options.locale.names;
-        if (options.locale?.descriptions) obj.description_localizations = options.locale.descriptions;
+        if (options?.locale?.names) obj.name_localizations = options.locale.names;
+        if (options?.locale?.descriptions) obj.description_localizations = options.locale.descriptions;
         if (options?.options?.length) obj.options = options.options;
-        if (options.type) obj.type = options.type;
-        if (typeof options.defaultPermission === "boolean") obj.default_permission = options.defaultPermission;
-        else if (typeof options.default_permission === "boolean") obj.default_permission = options.default_permission;
+        if (options?.type) obj.type = options.type;
+
+        // TODO: Remove this, as it's deprecated.
+        if ("defaultPermission" in options) obj.default_permission = options.defaultPermission;
+        else if ("default_permission" in options) obj.default_permission = options.default_permission;
+
+        if ("dmPermission" in options) obj.dm_permission = obj.dmPermission;
+        else if ("dm_permission" in options) obj.dm_permission = obj.dm_permission;
+        
+        if ("default_member_permissions" in options) obj.default_member_permissions = options.default_member_permissions;
+        else if ("defaultMemberPermissions" in options) obj.default_member_permissions = options.defaultMemberPermissions;
         return obj;
     };
 };
